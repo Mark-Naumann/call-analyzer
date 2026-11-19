@@ -17,9 +17,10 @@ and suggested a prompt fix. No one had to read the transcript to find it.
 
 ## The fix, and why a person wrote it
 
-The analyzer's own suggested fix **had an error too**, so it couldn't be pasted into the
-prompt as it was. This is exactly why the review only *suggests* fixes and a person
-decides what goes live.
+The analyzer's own suggested fix **had an error too**: the example phone number it wrote
+into its proposed prompt rule had **11 digits**, the same mistake it had just caught.
+Pasted in as it was, the "fix" would have taught Jordan the bug. This is exactly why the
+review only *suggests* fixes and a person decides what goes live.
 
 I rewrote the rule by hand. Jordan v10's prompt now says to read the number back once,
 with **every digit as a word**, in groups of 3, 3 and 4 ("five oh five, …"), never as

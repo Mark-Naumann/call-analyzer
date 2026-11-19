@@ -29,7 +29,7 @@ end of each call, an AI model reads the transcript and fills in these 8 fields.
 | `caller_goal_met` | yes/no: did the caller get what they called for (an answer, a booking, their info taken, or a correct referral)? |
 | `one_question_per_turn` | yes/no: did the agent ask only one question per turn and never answer its own question? |
 | `remembered_context` | yes/no: did the agent use what the caller already said instead of asking again? |
-| `accuracy` | yes/no: did the agent avoid making up facts, prices, times or policies, and repeat names and phone numbers back correctly? |
+| `accuracy` | yes/no: did the agent avoid making up facts, prices, times or policies, and repeat names and phone numbers back with the **correct digits** (10 digits, matching what the caller said)? Numerals or dashes in the transcript are fine; only wrong, missing or extra digits (or made-up info) count as "no". |
 | `caller_sentiment` | happy, neutral or frustrated, by the end of the call |
 | `issues_found` | Short list of the agent's specific mistakes, each with a short quote from the transcript, or "none" |
 | `suggested_prompt_fix` | One specific rule to add or change in the prompt to prevent the biggest issue, ready to paste, or "none" |
@@ -77,7 +77,7 @@ The reviewer is good at **spotting** problems and unreliable at **fixing** them,
 
 | # | Finding | Lesson |
 |---|---|---|
-| 1 | [Jordan read back an 11-digit phone number](examples/01-eleven-digit-phone-readback.md). The analyzer's own suggested fix had an error too, so I rewrote it by hand → Jordan v10. | The reviewer is a detector; its fix is a draft. |
+| 1 | [Jordan read back an 11-digit phone number](examples/01-eleven-digit-phone-readback.md). The analyzer's own suggested fix had an error too (its example number had 11 digits), so I rewrote it by hand → Jordan v10. | The reviewer is a detector; its fix is a draft. |
 | 2 | [Grading the grader](examples/02-grading-the-grader.md): a correct read-back was flagged because the transcript showed the digits with dashes. The accuracy rule now checks digits, not formatting. | Graders have bugs too; grade only what the transcript can show. |
 | 3 | [Incident: publishing in Vapi silently detached the review](examples/03-incident-review-silently-detached.md). Caught by a blank review email, confirmed in the call logs, worked around by re-attaching after each publish. | Monitor for *missing* data, not just bad data. |
 

@@ -13,7 +13,7 @@ Jordan v10 ([transit-agent](https://github.com/Mark-Naumann/transit-agent)) · N
 
 ## Why
 
-Test calls and evals check the cases I thought of. Real calls find the ones I didn't.
+Scripted evals check the cases I thought of. Free-form test calls find the ones I didn't.
 Instead of reading every transcript, each call is reviewed automatically and I read the
 reviews, starting with the lowest scores. It has already found a real bug (see
 [examples](#real-findings)).
